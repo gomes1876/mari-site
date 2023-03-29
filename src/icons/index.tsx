@@ -3,13 +3,15 @@ interface IconType {
     icon: JSX.Element;
     text: string;
     clicked: boolean;
+    link?: string;
     // classnameText: 
 }
 
-export default function ({ icon, text, clicked }: IconType) {
+export default function ({ icon, text, clicked, link }: IconType) {
     return (
 
-        <div
+        <a
+            href={link}
             className={`
             flex justify-between flex-row items-center 
             px-6 b  border-2  
@@ -20,6 +22,6 @@ export default function ({ icon, text, clicked }: IconType) {
             {icon}
 
             <span className='text-brown-500 font-semibold'>{text}</span>
-        </div>
+        </a>
     )
 }
