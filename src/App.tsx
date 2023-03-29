@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import Logo from './assets/logo.png';
 import TextLogo from './assets/text-logo.png';
 import './App.css'
+import Icons from './icons';
 
 function App() {
   const [clicked, setClicked] = useState(false);
@@ -19,20 +20,33 @@ function App() {
           "
     >
       <img src={Logo} className="w-20 h-20 mb-12" />
+      <div className='space-y-6'>
 
-      <div
-        className={`
-            flex justify-between flex-row items-center 
-            px-6 b  border-2  
-            w-[40vh] h-12 hover:bg-brown-400
-            ${clicked ? 'bg-brown-100' : 'border-brown-500'} 
-            transition duration-500 ease-in-out
-            `}>
-        <Icon icon="ri:whatsapp-fill" width={30} color='#522F0D' />
-        <span className='text-brown-500 font-semibold'>Whatsapp</span>
-
+        <Icons
+          icon={<Icon icon="ri:whatsapp-fill" width={30} color='#522F0D' />}
+          text="Whatsapp"
+          clicked={clicked}
+        />
+        <Icons
+          icon={<Icon icon="mdi:instagram" width={30} color='#522F0D' />}
+          text="Instagram"
+          clicked={clicked}
+        />
+        <Icons
+          icon={<Icon icon="mdi:location-radius" width={30} color='#522F0D' className='ml-[-0.5vh]' />}
+          text="Local de atendimento"
+          clicked={clicked}
+        />
+        <Icons
+          icon={<Icon icon="material-symbols:mail" width={30} color='#522F0D' />}
+          text="E-mail"
+          clicked={clicked}
+        />
       </div>
-      <img src={TextLogo} className="w-76 h-18 self-end" />
+
+      <div className='mt-20' />
+
+      <img src={TextLogo} className="w-76 h-18 self-end " />
     </div>
   )
 }
